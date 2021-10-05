@@ -1,0 +1,8 @@
+{
+    "plugins": [
+        "npm",
+        "all-contributors",
+        "released"
+    ],
+    "onlyPublishWithReleaseLabel": true
+}
