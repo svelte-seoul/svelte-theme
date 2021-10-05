@@ -16,9 +16,6 @@
   "version": "0.1.0",
   "svelte": "src/index.ts",
   "main": "build/index.js",
-  "files": [
-    "build"
-  ],
   "scripts": {
     "build": "rollup -c",
     "release": "auto shipit",
