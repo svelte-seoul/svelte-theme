@@ -1,27 +1,33 @@
 {
-
   "name": "svelte-theme-provider",
   "description": "Svelte implementation of dooboo-ui/theme",
-  "keywords": ["svelte", "theme"],
+  "keywords": [
+    "svelte",
+    "theme"
+  ],
   "homepage": "https://github.com/yujong-lee/svelte-theme-provider",
-  "bugs": {"url": "https://github.com/yujong-lee/Svelte-demo/issues"},
+  "bugs": {
+    "url": "https://github.com/yujong-lee/Svelte-demo/issues"
+  },
   "license": "MIT",
-  "author": {"name": "Yujong Lee"},
+  "author": {
+    "name": "Yujong Lee"
+  },
   "version": "0.1.0",
   "svelte": "src/index.ts",
   "main": "build/index.js",
-  "files": ["build"],
-  
-
+  "files": [
+    "build"
+  ],
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public --no-clear",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "test": "jest",
-    "lint": "eslint './src/**/*.{js,ts,svelte}'"
+    "release": "auto shipit",
+    "test": "jest"
   },
   "devDependencies": {
+    "@auto-it/all-contributors": "^10.32.1",
+    "@auto-it/npm": "^10.32.1",
+    "@auto-it/released": "^10.32.1",
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.6",
     "@rollup/plugin-commonjs": "^17.0.0",
@@ -34,6 +40,7 @@
     "@types/jest-plugin-context": "^2.9.4",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
     "@typescript-eslint/parser": "^4.32.0",
+    "auto": "^10.32.1",
     "babel-jest": "^27.2.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -58,5 +65,6 @@
   },
   "dependencies": {
     "sirv-cli": "^1.0.0"
-  }
+  },
+  "repository": "yujong-lee/svelte-theme-provider"
 }
