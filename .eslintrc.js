@@ -35,6 +35,8 @@ module.exports = {
     'svelte3/typescript': true,
   },
   rules: {
+    // TODO
     'import/no-extraneous-dependencies': 'off',
+    'import/prefer-default-export': 'off',
   },
 };
