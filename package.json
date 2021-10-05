@@ -1,7 +1,18 @@
 {
-  "name": "svelte-app",
-  "version": "1.0.0",
-  "private": true,
+
+  "name": "svelte-theme-provider",
+  "description": "Svelte implementation of dooboo-ui/theme",
+  "keywords": ["svelte", "theme"],
+  "homepage": "https://github.com/yujong-lee/svelte-theme-provider",
+  "bugs": {"url": "https://github.com/yujong-lee/Svelte-demo/issues"},
+  "license": "MIT",
+  "author": {"name": "Yujong Lee"},
+  "version": "0.1.0",
+  "svelte": "src/index.ts",
+  "main": "build/index.js",
+  "files": ["build"],
+  
+
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
