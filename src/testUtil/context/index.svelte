@@ -1,11 +1,10 @@
-/* eslint-disable import/prefer-default-export */
 <script>
     import ThemeProvider from '../../ThemeProvider.svelte';
     import ShowContext from './ShowContext.svelte';
     
-    export let contextValue;
+    export let themeType;
 </script>
   
-<ThemeProvider contextValue={contextValue}>
+<ThemeProvider themeType={themeType}>
     <ShowContext/>
 </ThemeProvider>

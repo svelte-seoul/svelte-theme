@@ -16,6 +16,8 @@ type ThemeSpecificColors = {
     placeholder: string,
 }
 
+type Theme = CommonColors & ThemeSpecificColors
+
 const common: CommonColors = {
   primary: '#0db293',
   secondary: '#00d9d5',
@@ -25,9 +27,7 @@ const common: CommonColors = {
   info: '#3a74e7',
 };
 
-export type DoobooTheme = CommonColors & ThemeSpecificColors;
-
-export const light: DoobooTheme = {
+export const light: Theme = {
   ...common,
   background: '#FFF',
   paper: '#EDEDED',
@@ -37,7 +37,7 @@ export const light: DoobooTheme = {
   placeholder: '#6D6D6D',
 };
 
-export const dark: DoobooTheme = {
+export const dark: Theme = {
   ...common,
   background: '#000',
   paper: '#414141',
@@ -45,4 +45,8 @@ export const dark: DoobooTheme = {
   text: '#FFF',
   textContrast: '#000',
   placeholder: '#6D6D6D',
+};
+
+export const theme = {
+  light, dark,
 };

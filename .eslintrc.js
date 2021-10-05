@@ -33,10 +33,18 @@ module.exports = {
   ],
   settings: {
     'svelte3/typescript': true,
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'src/'],
+      },
+    },
   },
   rules: {
     // TODO
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
+    'import/extensions': 'off',
+    'import/first': 'off',
   },
 };

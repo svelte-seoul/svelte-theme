@@ -2,18 +2,46 @@
  * @jest-environment jsdom
  */
 
-import { render } from '@testing-library/svelte';
+import { fireEvent, render } from '@testing-library/svelte';
 
 import ShowContext from './testUtil/context/index.svelte';
 
 describe('ThemeProvider', () => {
-  it('provides theme object to children', () => {
+  it('provides name of current theme', () => {
     const { getByText } = render(ShowContext, {
       props: {
-        contextValue: { theme: { light: { primary: 'red' } } },
+        themeType: 'light',
       },
     });
 
-    expect(getByText(/{"light":{"primary":"red"}}/)).toBeInTheDocument();
+    expect(getByText(/light/)).toBeInTheDocument();
+  });
+
+  it('provides theme object by name', () => {
+    const { getByText } = render(ShowContext, {
+      props: {
+        themeType: 'light',
+      },
+    });
+
+    expect(getByText(/"text":"#000"/)).toBeInTheDocument();
+  });
+
+  it('provides theme toggler function', async () => {
+    const { getByText, getByRole } = render(ShowContext, {
+      props: {
+        themeType: 'light',
+      },
+    });
+
+    await fireEvent.click(getByRole('button', { name: 'toggle' }));
+
+    expect(getByText(/dark/)).toBeInTheDocument();
+    expect(getByText(/"text":"#FFF"/)).toBeInTheDocument();
+
+    await fireEvent.click(getByRole('button', { name: 'toggle' }));
+
+    expect(getByText(/light/)).toBeInTheDocument();
+    expect(getByText(/"text":"#000"/)).toBeInTheDocument();
   });
 });
