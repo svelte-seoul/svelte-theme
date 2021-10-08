@@ -1,6 +1,8 @@
 {
   "name": "svelte-theme-provider",
   "description": "Svelte implementation of dooboo-ui/theme",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "keywords": [
     "svelte",
     "theme"
@@ -13,9 +15,8 @@
   "author": {
     "name": "Yujong Lee"
   },
-  "version": "0.1.0",
+  "version": "0.1.2",
   "svelte": "src/index.ts",
-  "main": "build/index.js",
   "scripts": {
     "build": "rollup -c",
     "release": "auto shipit",
