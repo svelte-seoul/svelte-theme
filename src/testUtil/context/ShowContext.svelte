@@ -5,10 +5,13 @@
 
     let theme;
     let themeType;
+    let themeText;
 
-    Theme.subscribe((value) => { theme = value.theme; themeType = value.themeType; });
-
-    $: themeText = JSON.stringify(theme);
+    $: {
+      theme = $Theme.theme;
+      themeType = $Theme.themeType;
+      themeText = JSON.stringify(theme);
+    }
 </script>
 
 <p>{themeType}</p>
