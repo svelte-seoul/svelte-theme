@@ -8,11 +8,12 @@ module.exports = {
     ],
     '^.+\\.ts$': 'ts-jest',
   },
-  roots: ['src/'],
+  roots: ['components/'],
   moduleFileExtensions: [
     'js',
     'ts',
     'svelte',
   ],
+  testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['./jest.setup.ts', 'givens/setup.js', 'jest-plugin-context/setup.js'],
 };

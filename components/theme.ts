@@ -1,22 +1,24 @@
 type CommonColors = {
-    primary: string,
-    secondary: string,
-    success: string,
-    danger: string,
-    warning: string,
-    info: string,
+  primary: string,
+  secondary: string,
+  success: string,
+  danger: string,
+  warning: string,
+  info: string,
 }
 
 type ThemeSpecificColors = {
-    background: string,
-    paper: string,
-    disabled: string,
-    text: string,
-    textContrast: string,
-    placeholder: string,
+  background: string,
+  paper: string,
+  disabled: string,
+  text: string,
+  textContrast: string,
+  placeholder: string,
 }
 
-type Theme = CommonColors & ThemeSpecificColors
+export type Theme = CommonColors & ThemeSpecificColors
+
+export type ThemeType = 'light' | 'dark'
 
 const common: CommonColors = {
   primary: '#0db293',

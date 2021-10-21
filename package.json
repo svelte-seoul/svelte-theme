@@ -1,31 +1,45 @@
 {
   "name": "svelte-theme-provider",
   "description": "Svelte implementation of dooboo-ui/theme",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "svelte": "./index.js",
+  "module": "./lib/index.mjs",
+  "main": "./lib/index.js",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "components/theme.ts",
+    "components/ThemeProvider.svelte",
+    "types",
+    "lib",
+    "index.js"
+  ],
   "keywords": [
     "svelte",
     "theme"
   ],
-  "homepage": "https://github.com/yujong-lee/svelte-theme-provider",
+  "homepage": "https://github.com/wecount-dev/svelte-theme-provider",
   "bugs": {
-    "url": "https://github.com/yujong-lee/Svelte-demo/issues"
+    "url": "https://github.com/wecount-dev/svelte-theme-provider/issues"
   },
   "license": "MIT",
   "author": {
     "name": "Yujong Lee"
   },
-  "version": "0.1.2",
-  "svelte": "src/index.ts",
+  "version": "0.1.10",
   "scripts": {
     "build": "rollup -c",
-    "release": "auto shipit",
     "test": "jest"
   },
+  "dependencies": {
+    "css-vars-ponyfill": "^2.4.7"
+  },
   "devDependencies": {
-    "@auto-it/all-contributors": "^10.32.1",
-    "@auto-it/npm": "^10.32.1",
-    "@auto-it/released": "^10.32.1",
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.6",
     "@rollup/plugin-commonjs": "^17.0.0",
@@ -38,7 +52,6 @@
     "@types/jest-plugin-context": "^2.9.4",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
     "@typescript-eslint/parser": "^4.32.0",
-    "auto": "^10.32.1",
     "babel-jest": "^27.2.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -61,8 +74,5 @@
     "tslib": "^2.3.1",
     "typescript": "^4.4.3"
   },
-  "dependencies": {
-    "sirv-cli": "^1.0.0"
-  },
-  "repository": "yujong-lee/svelte-theme-provider"
+  "repository": "wecount-dev/svelte-theme-provider"
 }
