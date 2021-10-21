@@ -4,11 +4,11 @@ import { terser } from 'rollup-plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 
 export default {
-  input: './index.ts',
+  input: './src/index.ts',
   output: {
     format: 'iife',
     name: 'app',
-    file: './build/index.js',
+    file: './lib/index.js',
   },
   plugins: [
     svelte(),
