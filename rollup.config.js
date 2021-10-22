@@ -1,10 +1,12 @@
-import { terser } from 'rollup-plugin-terser';
+import sveltePreprocessor from 'svelte-preprocess';
+import sveld from 'sveld';
+
 import svelte from 'rollup-plugin-svelte';
+import { terser } from 'rollup-plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import sveld from 'sveld';
 import typescript from '@rollup/plugin-typescript';
-import sveltePreprocessor from 'svelte-preprocess';
+
 import pkg from './package.json';
 
 export default ['es', 'umd'].map((format) => {

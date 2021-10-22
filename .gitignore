@@ -2,3 +2,4 @@
 /lib/
 .DS_Store
 .env
+components/theme.js
