@@ -1,27 +1,21 @@
-# Svelte-theme-provider
+# svelte-theme
 
 Svelte implementation of [theme package](https://www.npmjs.com/package/@dooboo-ui/theme) in [dooboo-ui](https://github.com/dooboolab/dooboo-ui).
 
-
-```ts
+```tsx
 <script>
-  import { ThemeProvider } from 'svelte-theme-provider';
+  import { ThemeProvider } from 'svelte-theme';
 </script>
-    
+
 <ThemeProvider themeType={themeType}>
-    <Test/>
+  <App/>
 </ThemeProvider>
 ```
 
-```ts
+```svelte
 <script>
-    import { getContext } from 'svelte';
-    
-    const { Theme, toggle } = getContext('theme');
+  import {getContext} from 'svelte';
 
-    let theme;
-    let themeType;
-
-    Theme.subscribe((value) => { theme = value.theme; themeType = value.themeType; });
+  const {(themeType, toggle, theme)} = getContext('theme');
 </script>
 ```

@@ -1,5 +1,6 @@
 {
   "name": "svelte-theme",
+  "version": "0.1.0",
   "description": "Svelte implementation of @dooboo-ui/theme",
   "svelte": "./index.js",
   "module": "./lib/index.mjs",
@@ -23,15 +24,14 @@
     "svelte",
     "theme"
   ],
-  "homepage": "https://github.com/wecount-dev/svelte-theme-provider",
+  "homepage": "https://github.com/wecount-dev/svelte-theme",
   "bugs": {
-    "url": "https://github.com/wecount-dev/svelte-theme-provider/issues"
+    "url": "https://github.com/wecount-dev/svelte-theme/issues"
   },
   "license": "MIT",
   "author": {
     "name": "dooboolab <dooboolab.com>"
   },
-  "version": "0.1.0",
   "scripts": {
     "build": "rollup -c && tsc components/theme.ts",
     "test": "jest"
@@ -75,5 +75,5 @@
     "tslib": "^2.3.1",
     "typescript": "^4.4.3"
   },
-  "repository": "wecount-dev/svelte-theme-provider"
+  "repository": "wecount-dev/svelte-theme"
 }
