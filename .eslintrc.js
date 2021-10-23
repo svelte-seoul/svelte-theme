@@ -4,10 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: [
-    'airbnb-base',
-    'plugin:jest-dom/recommended',
-  ],
+  extends: ['airbnb-base', 'plugin:jest-dom/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 12,
@@ -18,10 +15,7 @@ module.exports = {
     context: 'readonly',
     given: 'readonly',
   },
-  plugins: [
-    'svelte3',
-    '@typescript-eslint',
-  ],
+  plugins: ['svelte3', '@typescript-eslint'],
   overrides: [
     {
       files: ['*.svelte'],
