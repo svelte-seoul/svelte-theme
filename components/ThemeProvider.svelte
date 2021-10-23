@@ -2,12 +2,10 @@
   import { onMount, setContext } from 'svelte';
   import { writable } from 'svelte/store';
 
-  import type { ThemeType, Theme } from './theme';
+  import type { ThemeType, Theme, ThemeStore } from './theme';
   import { theme } from './theme';
 
   export let initialTheme: ThemeType = 'light';
-
-  type ThemeStore = { themeType: ThemeType; theme: Theme };
 
   const store = writable<ThemeStore>({
     themeType: initialTheme,

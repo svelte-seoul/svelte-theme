@@ -1,24 +1,24 @@
 type CommonColors = {
-  primary: string,
-  secondary: string,
-  success: string,
-  danger: string,
-  warning: string,
-  info: string,
-}
+  primary: string;
+  secondary: string;
+  success: string;
+  danger: string;
+  warning: string;
+  info: string;
+};
 
 type ThemeSpecificColors = {
-  background: string,
-  paper: string,
-  disabled: string,
-  text: string,
-  textContrast: string,
-  placeholder: string,
-}
+  background: string;
+  paper: string;
+  disabled: string;
+  text: string;
+  textContrast: string;
+  placeholder: string;
+};
 
-export type Theme = CommonColors & ThemeSpecificColors
-
-export type ThemeType = 'light' | 'dark'
+export type Theme = CommonColors & ThemeSpecificColors;
+export type ThemeType = 'light' | 'dark';
+export type ThemeStore = { themeType: ThemeType; theme: Theme };
 
 const common: CommonColors = {
   primary: '#0db293',
@@ -50,5 +50,6 @@ export const dark: Theme = {
 };
 
 export const theme = {
-  light, dark,
+  light,
+  dark,
 };
