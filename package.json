@@ -29,9 +29,9 @@
   },
   "license": "MIT",
   "author": {
-    "name": "Yujong Lee"
+    "name": "dooboolab <dooboolab.com>"
   },
-  "version": "0.1.11",
+  "version": "0.2.0",
   "scripts": {
     "build": "rollup -c && tsc components/theme.ts",
     "test": "jest"
@@ -51,7 +51,7 @@
     "@types/jest": "^27.0.2",
     "@types/jest-plugin-context": "^2.9.4",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
-    "@typescript-eslint/parser": "^4.32.0",
+    "@typescript-eslint/parser": "^5.1.0",
     "babel-jest": "^27.2.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",

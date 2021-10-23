@@ -1,0 +1,9 @@
+node_modules
+!components/**/*.svelte
+!components/**/*.js
+!lib
+!types
+!index.js
+!**/*.d.ts
+!package.json
+!README.md

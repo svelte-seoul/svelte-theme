@@ -1,5 +1,6 @@
-/node_modules/
-/lib/
 .DS_Store
 .env
 components/theme.js
+lib
+node_modules
+**/*.d.ts
