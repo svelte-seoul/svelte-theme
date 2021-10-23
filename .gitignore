@@ -4,3 +4,4 @@ components/theme.js
 lib
 node_modules
 **/*.d.ts
+types

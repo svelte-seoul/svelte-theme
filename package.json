@@ -2,12 +2,13 @@
   "name": "svelte-theme",
   "version": "0.1.1",
   "description": "Svelte implementation of @dooboo-ui/theme",
-  "svelte": "./index.js",
+  "svelte": "./index.ts",
   "module": "./lib/index.mjs",
   "main": "./lib/index.js",
   "types": "./types/index.d.ts",
   "exports": {
     ".": {
+      "types": "./lib/index.d.ts",
       "import": "./lib/index.mjs",
       "require": "./lib/index.js"
     },
