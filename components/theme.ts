@@ -1,4 +1,4 @@
-type CommonColors = {
+export type CommonColors = {
   primary: string;
   secondary: string;
   success: string;
@@ -7,7 +7,7 @@ type CommonColors = {
   info: string;
 };
 
-type ThemeSpecificColors = {
+export type ThemeColors = {
   background: string;
   paper: string;
   disabled: string;
@@ -16,7 +16,7 @@ type ThemeSpecificColors = {
   placeholder: string;
 };
 
-export type Theme = CommonColors & ThemeSpecificColors;
+export type Theme = CommonColors & ThemeColors;
 export type ThemeType = 'light' | 'dark';
 export type ThemeStore = { themeType: ThemeType; theme: Theme };
 

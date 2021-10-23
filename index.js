@@ -4,3 +4,4 @@ import cssVariablesPolyfill from 'css-vars-ponyfill';
 cssVariablesPolyfill();
 
 export { default as ThemeProvider } from './components/ThemeProvider.svelte';
+export * from './components/theme';
