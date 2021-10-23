@@ -1,8 +1,18 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
   "include": [ "**/*.ts" , "index.ts"  ],
-  "exclude": ["node_modules/*", "__sapper__/*", "public/*"],
+  "exclude": [
+    "node_modules",
+    "lib",
+    "__sapper__/*",
+    "public/*",
+    "jest.setup.ts",
+    "**/*.test.*/**"
+  ],
   "compilerOptions": {
-    "outDir": "dist"
+    "outDir": "dist",
+    "declaration": true,
+    "module": "es6",
+    "target": "es6"
   }
 }

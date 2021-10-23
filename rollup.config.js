@@ -1,19 +1,21 @@
-import sveltePreprocessor from 'svelte-preprocess';
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
 import sveld from 'sveld';
+import babel from '@rollup/plugin-babel';
 
 import svelte from 'rollup-plugin-svelte';
+import sveltePreprocessor from 'svelte-preprocess';
 import { terser } from 'rollup-plugin-terser';
-import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
-
 import pkg from './package.json';
+
+const extensions = ['.ts', '.svelte'];
 
 export default ['es', 'umd'].map((format) => {
   const isUMD = format === 'umd';
 
   const svelteConfig = {
-    extensions: ['.svelte'],
+    extensions,
     preprocess: sveltePreprocessor(),
     emitCss: false,
   };
@@ -35,6 +37,9 @@ export default ['es', 'umd'].map((format) => {
     },
     external: Object.keys(pkg.dependencies),
     plugins: [
+      resolve({ extensions }),
+      commonjs(),
+      babel({ exclude: 'node_modules/**' }),
       typescript({ tsconfig: './tsconfig.json' }),
 
       svelte(svelteConfig),
@@ -42,7 +47,6 @@ export default ['es', 'umd'].map((format) => {
         browser: true,
         dedupe: ['svelte'],
       }),
-      commonjs(),
       isUMD && sveld(),
       terser(),
     ],
