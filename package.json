@@ -1,6 +1,6 @@
 {
-  "name": "svelte-theme-provider",
-  "description": "Svelte implementation of dooboo-ui/theme",
+  "name": "svelte-theme",
+  "description": "Svelte implementation of @dooboo-ui/theme",
   "svelte": "./index.js",
   "module": "./lib/index.mjs",
   "main": "./lib/index.js",
@@ -31,7 +31,7 @@
   "author": {
     "name": "dooboolab <dooboolab.com>"
   },
-  "version": "0.2.0",
+  "version": "0.1.0",
   "scripts": {
     "build": "rollup -c && tsc components/theme.ts",
     "test": "jest"
