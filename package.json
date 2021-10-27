@@ -1,8 +1,8 @@
 {
   "name": "svelte-theme",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Svelte theme package",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "lint": "eslint src --ext .ts,.js,.svelte",
     "build": "rollup -c",
