@@ -5,4 +5,4 @@ cssVariablesPolyfill();
 
 
 export {default as ThemeProvider} from "./ThemeProvider.svelte";
-export * as default from './theme';
+export * from './theme';
