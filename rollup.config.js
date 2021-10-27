@@ -1,13 +1,19 @@
-import commonjs from "@rollup/plugin-commonjs";
-import css from "rollup-plugin-css-only";
 import json from "@rollup/plugin-json";
-import livereload from "rollup-plugin-livereload";
-import replace from "@rollup/plugin-replace";
 import resolve from "@rollup/plugin-node-resolve";
-import sveltePreprocess from "svelte-preprocess";
+import sveltePreprocessor from "svelte-preprocess";
 import svelte from "rollup-plugin-svelte";
 import { terser } from "rollup-plugin-terser";
 import typescript from "@rollup/plugin-typescript";
+import sveld from 'sveld';
+import pkg from './package.json';
+import commonjs from 'rollup-plugin-commonjs';
+import execute from "rollup-plugin-execute";
+
+const extensions = ['.ts', '.svelte'];
+const name = pkg.name
+.replace(/^(@\S+\/)?(svelte-)?(\S+)/, "$3")
+.replace(/^\w/, (m) => m.toUpperCase())
+.replace(/-\w/g, (m) => m[1].toUpperCase());
 
 function serve() {
   let server;
@@ -38,43 +44,45 @@ function serve() {
 
 export default {
   input: "src/index.ts",
-  output: {
-    sourcemap: false,
-    format: "iife",
-    name: "svelte_theme",
-    file: "lib/index.js",
-  },
-  plugins: [
-    svelte({
-      preprocess: [
-        sveltePreprocess({
-          postcss: true,
-        }),
+  output: [
+    {
+      file: pkg.module,
+      format: "es",
+      sourcemap: true,
+    },
+    {
+      file: pkg.main,
+      format: "umd",
+      name,
+      sourcemap: true,
+      plugins: [
+        // we only want to run this once, so we'll just make it part of this output's plugins
+        execute([
+          "tsc --outDir ./lib --declaration",
+          "node src/preprocess.js",
+        ]),
       ],
-      compilerOptions: {
-        // enable run-time checks when not in production
-      },
-    }),
-    // we'll extract any component CSS out into
-    // a separate file - better for performance
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    css({ output: "bundle.css" }),
-
-    // If you have external dependencies installed from
-    // npm, you'll most likely need these plugins. In
-    // some cases you'll need additional configuration -
-    // consult the documentation for details:
-    // https://github.com/rollup/plugins/tree/master/packages/commonjs
+    },
+  ],
+  external: Object.keys(pkg.dependencies),
+  plugins: [
     resolve({
       browser: true,
-      dedupe: ["svelte"],
+      dedupe: ['svelte'],
     }),
-    commonjs(),
-    typescript({
-      tsconfig: "./tsconfig.json",
+    svelte({
+      // extensions,
+      preprocess: [sveltePreprocessor({postcss: true})],
+      emitCss: false,
+      compilerOptions: {
+        generate: 'ssr'
+      },
     }),
+    typescript({ tsconfig: "./tsconfig.json" }),
     terser(),
     json(),
+    sveld(),
+    commonjs(),
   ],
   watch: {
     clearScreen: false,
