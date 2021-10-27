@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { onMount, setContext } from "svelte";
-  import { writable } from "svelte/store";
+  import {onMount, setContext} from "svelte";
+  import {writable} from "svelte/store";
 
-  import { ThemeType, Theme, ThemeStore, theme } from "./theme";
+  import {ThemeType, Theme, ThemeStore, theme} from "./theme";
 
   export let initialTheme: ThemeType = "light";
 
@@ -20,7 +20,7 @@
   };
 
   const toggle = () => {
-    store.update(({ themeType }) => {
+    store.update(({themeType}) => {
       const newThemeType = themeType === "light" ? "dark" : "light";
 
       setCssVars(theme[newThemeType]);

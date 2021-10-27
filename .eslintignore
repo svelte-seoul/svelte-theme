@@ -1,0 +1,6 @@
+__mocks__
+*.js
+*.html
+*.css
+generated
+src/types/supabase.ts

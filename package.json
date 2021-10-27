@@ -4,6 +4,7 @@
   "description": "Svelte theme package",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint src --ext .ts,.js,.svelte",
     "build": "rollup -c",
     "test": "jest"
   },
