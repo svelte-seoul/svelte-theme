@@ -81,8 +81,8 @@ export default {
     typescript({ tsconfig: "./tsconfig.json" }),
     terser(),
     json(),
-    sveld(),
     commonjs(),
+    sveld(),
   ],
   watch: {
     clearScreen: false,

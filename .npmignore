@@ -2,3 +2,4 @@
 !lib/**/*
 !package.json
 !README.md
+!src/index.ts
