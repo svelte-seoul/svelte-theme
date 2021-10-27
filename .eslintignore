@@ -3,4 +3,3 @@ __mocks__
 *.html
 *.css
 generated
-src/types/supabase.ts

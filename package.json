@@ -8,6 +8,7 @@
   "scripts": {
     "lint": "eslint src --ext .ts,.js,.svelte",
     "build": "rollup -c",
+    "postbuild": "rm -rf lib/__tests__",
     "test": "jest"
   },
   "keywords": [

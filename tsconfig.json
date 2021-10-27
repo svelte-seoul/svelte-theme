@@ -1,7 +1,17 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
-  "include": [ "src/**/*" ],
-  "exclude": ["node_modules/*", "__sapper__/*", "public/*", "src/__tests__/**/*", "**/*__tests__/**/*"],
+  "include": [
+    "src/**/*",
+    ".eslintrc.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "__sapper__/*",
+    "public/*",
+    "dist",
+    "build",
+    "lib"
+  ],
   "compilerOptions": {
     "sourceMap": true,
     "outDir": "build"
