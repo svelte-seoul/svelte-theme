@@ -14,8 +14,8 @@ export const colors = {
   green: "#24CD97",
   blue: "#679EFF",
   purple: "#B669F9",
+  light: '#EDEDED',
 };
-
 
 export type CommonColors = typeof colors;
 
@@ -23,15 +23,16 @@ export const light = {
   ...colors,
   paper: "#F2F5F6",
   disabled: "#C4C4C4",
+  background: "#FFF",
   placeholder: "#6D6D6D",
-  text: "#000000",
-  background: "#FFFFFF",
-  textContrast: "#FFFFFF",
-  main: "#75D0B8",
-  mainDark: "#0DB293",
-  card: "#FFF",
+  text: "#000",
   textLight: "#1B1B1B",
+  textContrast: "#FFF",
+  main: colors.primary,
+  mainDark: colors.primaryLight,
+  card: "#FFF",
   link: "#8E9095",
+  border: "#D3D4D5",
 };
 
 export type Theme = typeof light;
@@ -40,15 +41,16 @@ export const dark: Theme = {
   ...colors,
   paper: "#2A2A2A",
   disabled: "#515151",
+  background: "#000",
   placeholder: "#6D6D6D",
   text: "#FFF",
-  background: "#FFF",
+  textLight: "#D3D3D3",
   textContrast: "#FFF",
-  main: "#0DB293",
-  mainDark: "#75D0B8",
+  main: colors.primaryLight,
+  mainDark: colors.primary,
   card: "#1C1C1C",
-  textLight: "#C4C4C4",
   link: "#B5B7BC",
+  border: "#343536",
 };
 
 export const theme = {
@@ -57,4 +59,18 @@ export const theme = {
 };
 
 export type ThemeType = "light" | "dark";
-export type ThemeStore = { themeType: ThemeType; theme: Theme };
+export type ThemeStore = { themeType: ThemeType; theme: Theme};
+
+export interface Themes {
+  light: Theme;
+  dark: Theme;
+}
+
+interface JSONObject {
+  [x: string]: string;
+}
+
+export type ThemeParam  = {
+  light?: Theme;
+  dark?: Theme;
+} & JSONObject;

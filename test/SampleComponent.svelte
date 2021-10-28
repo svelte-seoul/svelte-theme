@@ -2,6 +2,6 @@
   import {ThemeProvider} from '../src';
 </script>
 
-<ThemeProvider initialTheme="light">
+<ThemeProvider initialThemeType="light">
   <div/>
 </ThemeProvider>

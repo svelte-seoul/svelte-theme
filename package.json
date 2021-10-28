@@ -1,6 +1,6 @@
 {
   "name": "svelte-theme",
-  "version": "0.6.2",
+  "version": "1.0.0",
   "description": "Svelte theme package",
   "main": "lib/index.js",
   "types": "lib/ts/index.d.ts",
