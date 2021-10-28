@@ -1,4 +1,4 @@
-## 1.0.1
+## 1.0.2
 
 Update `customTheme` types which wasn't correctly typed.
 

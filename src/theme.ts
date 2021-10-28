@@ -73,4 +73,4 @@ interface JSONObject {
 export type ThemeParam  = {
   light?: Partial<Theme> & JSONObject;
   dark?: Partial<Theme> & JSONObject;
-} & JSONObject;
+};
