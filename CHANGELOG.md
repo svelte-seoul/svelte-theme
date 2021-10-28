@@ -1,3 +1,7 @@
+## 1.0.3
+
+Add missing `changeThemeType` prop at `ThemeStore`.
+
 ## 1.0.2
 
 Update `customTheme` types which wasn't correctly typed.

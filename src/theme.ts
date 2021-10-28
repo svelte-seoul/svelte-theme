@@ -59,7 +59,11 @@ export const theme = {
 };
 
 export type ThemeType = "light" | "dark";
-export type ThemeStore = { themeType: ThemeType; theme: Theme};
+export type ThemeStore = { 
+  themeType: ThemeType;
+  theme: Theme;
+  changeThemeType?: (themeType: ThemeType) => void;
+};
 
 export interface Themes {
   light: Theme;
