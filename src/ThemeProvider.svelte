@@ -26,20 +26,11 @@
 
   const setCssVars = (current: Theme) => {
     Object.entries(current).forEach(([type, color]) => {
-      const kebabize = (str: string): string => {
-        return str
-          .split('')
-          .map((letter, idx) => {
-            return letter.toUpperCase() === letter
-              ? `${idx !== 0 ? '-' : ''}${letter.toLowerCase()}`
-              : letter;
-          })
-          .join('');
-      };
+      const kebabize = (str: string) => str.replace(/[A-Z]+(?![a-z])|[A-Z]/g, ($, ofs) => (ofs ? "-" : "") + $.toLowerCase());
 
       const varString = `--${kebabize(type)}`;
-
-      document.documentElement.style.setProperty(varString, color);
+ 
+     document.documentElement.style.setProperty(varString, color);
     });
   };
 

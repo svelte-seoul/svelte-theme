@@ -1,3 +1,8 @@
+## 1.1.0
+
+Enhance converting key to `kebab-case` from `camelCase`.
+- Previously `val10` converted to `--var-1-0` but should be `val10`.
+
 ## 1.0.3
 
 Add missing `changeThemeType` prop at `ThemeStore`.
