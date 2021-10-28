@@ -29,6 +29,18 @@ const {theme} = getContext<ThemeStore>('theme');
 
 > Note that `generic` type `ThemeStore` help you see theme props with autocomplete when using `typescript`.
 
+## Usage in css style
+
+The `theme` props will be converted to `kebab-case` in global css variables. For `mainDark` prop, it will be converted to `--main-dark` css variable. Thereofre inside `style` tag, you can you it like below.
+
+```js
+<style>
+  p {
+    color: var(--main-dark);
+  }
+</style>
+```
+
 ## Customizing theme
 
 #### 1. Define colors for `light` and `dark` theme.
@@ -96,12 +108,4 @@ export const dark: Theme = {
 <ThemeProvider customTheme={{light, dark}}>
   <App />
 </ThemeProvider>
-```
-
-## Notice
-
-The `theme` props will be converted to `kebab-case` in global css variables. For `mainDark` prop, it will be converted to `--main-dark` css variable. Thereofre inside `style` tag, you can you it like below.
-
-```css
-color: var(--main--dark);
 ```
