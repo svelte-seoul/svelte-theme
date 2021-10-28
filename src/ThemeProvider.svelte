@@ -46,7 +46,7 @@
       setCssVars(theme[newThemeType]);
 
       return {
-        ...$store,
+        ...$store as ThemeStore,
         themeType: newThemeType,
         theme: theme[newThemeType],
       };
