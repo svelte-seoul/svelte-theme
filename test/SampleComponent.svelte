@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {ThemeProvider, ThemeParam} from '../src';
+  import {ThemeProvider, ThemeParam, ThemeStore} from '../src';
 
   const common = {
     primary: '#0db293',
@@ -63,7 +63,6 @@
     light,
     dark,
   };
-
 </script>
 
 <ThemeProvider initialThemeType="light" customTheme={themes}>

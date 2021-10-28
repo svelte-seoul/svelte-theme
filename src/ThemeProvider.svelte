@@ -22,6 +22,7 @@
   const store = writable<ThemeStore>({
     themeType: initialThemeType,
     theme: themes[initialThemeType],
+    changeThemeType: () => {},
   });
 
   const setCssVars = (current: Theme) => {
@@ -34,7 +35,7 @@
     });
   };
 
-  const changeThemeType = (type: ThemeType) => {
+  const changeThemeType = (type?: ThemeType) => {
     store.update(({themeType}) => {
       const newThemeType = !type
         ? themeType === 'light'
@@ -45,6 +46,7 @@
       setCssVars(theme[newThemeType]);
 
       return {
+        ...$store,
         themeType: newThemeType,
         theme: theme[newThemeType],
       };

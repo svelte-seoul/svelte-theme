@@ -1,3 +1,7 @@
+## 1.1.1
+
+Enhance `changeThemeType` behavior in themeStore. This is not and optional function and the `themeType` arg is optional.
+
 ## 1.1.0
 
 Enhance converting key to `kebab-case` from `camelCase`.

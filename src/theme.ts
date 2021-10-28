@@ -62,7 +62,7 @@ export type ThemeType = "light" | "dark";
 export type ThemeStore = { 
   themeType: ThemeType;
   theme: Theme;
-  changeThemeType?: (themeType: ThemeType) => void;
+  changeThemeType: (themeType?: ThemeType) => void;
 };
 
 export interface Themes {
