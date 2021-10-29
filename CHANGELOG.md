@@ -1,3 +1,7 @@
+## 1.1.2
+
+Automatically detect the `dark` mode when mounted.
+
 ## 1.1.1
 
 Enhance `changeThemeType` behavior in themeStore. This is not and optional function and the `themeType` arg is optional.
