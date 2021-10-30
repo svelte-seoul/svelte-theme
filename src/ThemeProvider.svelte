@@ -19,6 +19,12 @@
     dark: {...theme.dark, ...customTheme?.dark},
   };
 
+  if (
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+  )
+    initialThemeType = 'dark';
+
   const store = writable<ThemeStore>({
     themeType: initialThemeType,
     theme: themes[initialThemeType],
@@ -27,13 +33,14 @@
 
   const setCssVars = (current: Theme) => {
     Object.entries(current).forEach(([type, color]) => {
-      const kebabize = (str: string) => str
-        .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
-        .replace(/([A-Z])([A-Z])(?=[a-z])/g, '$1-$2')
-        .toLowerCase();
+      const kebabize = (str: string) =>
+        str
+          .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+          .replace(/([A-Z])([A-Z])(?=[a-z])/g, '$1-$2')
+          .toLowerCase();
 
       const varString = `--${kebabize(type)}`;
- 
+
       document.documentElement.style.setProperty(varString, color);
     });
   };
@@ -46,10 +53,10 @@
           : 'light'
         : type;
 
-        setCssVars(theme[newThemeType]);
+      setCssVars(theme[newThemeType]);
 
       return {
-        ...$store as ThemeStore,
+        ...($store as ThemeStore),
         themeType: newThemeType,
         theme: theme[newThemeType],
       };
@@ -63,9 +70,6 @@
   });
 
   onMount(() => {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) 
-      changeThemeType('dark');
-
     setCssVars($store.theme);
   });
 </script>
