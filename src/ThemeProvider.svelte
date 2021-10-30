@@ -9,6 +9,7 @@
     Themes,
     theme,
     ThemeParam,
+    JSONObject,
   } from './theme';
 
   export let initialThemeType: ThemeType = 'light';
@@ -19,11 +20,9 @@
     dark: {...theme.dark, ...customTheme?.dark},
   };
 
-  if (
-    window.matchMedia &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches
-  )
-    initialThemeType = 'dark';
+  const darkSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+  if (darkSchemeQuery.matches) initialThemeType = 'dark';
 
   const store = writable<ThemeStore>({
     themeType: initialThemeType,
@@ -31,7 +30,7 @@
     changeThemeType: () => {},
   });
 
-  const setCssVars = (current: Theme) => {
+  const setCssVars = (current: Partial<Theme> & JSONObject) => {
     Object.entries(current).forEach(([type, color]) => {
       const kebabize = (str: string) =>
         str
@@ -53,17 +52,17 @@
           : 'light'
         : type;
 
-      setCssVars(theme[newThemeType]);
+      setCssVars(themes[newThemeType]);
 
       return {
         ...($store as ThemeStore),
         themeType: newThemeType,
-        theme: theme[newThemeType],
+        theme: themes[newThemeType],
       };
     });
   };
 
-  setContext('theme', {
+  setContext('svelte-theme', {
     theme: $store.theme,
     themeType: $store.themeType,
     changeThemeType,

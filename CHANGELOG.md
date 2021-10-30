@@ -1,3 +1,13 @@
+## 1.4.0
+
+### Breaking
+
+Rename context name to `svelte-theme` to remove side effect with other contexts.
+
+### Bugfix
+
+Fix changing theme not upadting the `custom` variables.
+
 ## 1.3.0
 
 ### Enhancement

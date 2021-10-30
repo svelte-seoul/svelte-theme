@@ -63,6 +63,6 @@
   };
 </script>
 
-<ThemeProvider initialThemeType="light" customTheme={themes}>
+<ThemeProvider initialThemeType="dark" customTheme={themes}>
   <div/>
 </ThemeProvider>

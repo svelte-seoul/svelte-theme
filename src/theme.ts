@@ -74,7 +74,7 @@ export interface Themes {
   dark: Theme;
 }
 
-interface JSONObject {
+export interface JSONObject {
   [x: string]: string;
 }
 
