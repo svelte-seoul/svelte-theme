@@ -1,3 +1,13 @@
+## 1.2.0
+
+### Enhancement
+
+Convert `kebab-case` from `camelCase` on case like `HTMLElement`. This will be converted to `html-element`.
+
+### Bugfix
+
+Fix initializing css variables that did not update the store variables.
+
 ## 1.1.2
 
 Automatically detect the `dark` mode when mounted.
@@ -9,6 +19,7 @@ Enhance `changeThemeType` behavior in themeStore. This is not and optional funct
 ## 1.1.0
 
 Enhance converting key to `kebab-case` from `camelCase`.
+
 - Previously `val10` converted to `--var-1-0` but should be `val10`.
 
 ## 1.0.3

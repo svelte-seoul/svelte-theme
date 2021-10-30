@@ -27,11 +27,14 @@
 
   const setCssVars = (current: Theme) => {
     Object.entries(current).forEach(([type, color]) => {
-      const kebabize = (str: string) => str.replace(/[A-Z]+(?![a-z])|[A-Z]/g, ($, ofs) => (ofs ? "-" : "") + $.toLowerCase());
+      const kebabize = (str: string) => str
+        .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+        .replace(/([A-Z])([A-Z])(?=[a-z])/g, '$1-$2')
+        .toLowerCase();
 
       const varString = `--${kebabize(type)}`;
  
-     document.documentElement.style.setProperty(varString, color);
+      document.documentElement.style.setProperty(varString, color);
     });
   };
 
@@ -43,7 +46,7 @@
           : 'light'
         : type;
 
-      setCssVars(theme[newThemeType]);
+        setCssVars(theme[newThemeType]);
 
       return {
         ...$store as ThemeStore,
@@ -60,10 +63,10 @@
   });
 
   onMount(() => {
-    setCssVars($store.theme);
-
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) 
-    changeThemeType('dark');
+      changeThemeType('dark');
+
+    setCssVars($store.theme);
   });
 </script>
 

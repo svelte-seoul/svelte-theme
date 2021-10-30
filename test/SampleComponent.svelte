@@ -40,7 +40,6 @@
     main: '#75d0b8',
     mainDark: "#0db293",
     background: '#ffffff',
-    authBackground: '#75d0b8',
     textContrast: '#ffffff',
   };
 
@@ -55,7 +54,6 @@
     main: '#0db293',
     mainDark: '#75d0b8',
     background: "#000000",
-    authBackground: '#232323',
     textContrast: '#000000',
   };
     
