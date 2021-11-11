@@ -4,5 +4,3 @@ node_modules
 coverage
 types
 package
-index.ts
-*.tgz
