@@ -31,7 +31,7 @@
   });
 
   const setCssVars = (current: Partial<Theme> & JSONObject) => {
-    Object.entries(current).forEach(([type, color]) => {
+    Object.entries(current).forEach(([type, hex]) => {
       const kebabize = (str: string) =>
         str
           .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
@@ -40,7 +40,18 @@
 
       const varString = `--${kebabize(type)}`;
 
-      document.documentElement.style.setProperty(varString, color);
+      const hexToRgb = (hex: string) => {
+        const parsed = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+
+        const [r, g, b] = parsed.slice(1).map((s: string) => parseInt(s, 16));
+
+        return `${r},${g},${b}`;
+      };
+
+      const rgb = hexToRgb(hex);
+
+      document.documentElement.style.setProperty(varString, hex);
+      document.documentElement.style.setProperty(varString + '-rgb', rgb);
     });
   };
 
