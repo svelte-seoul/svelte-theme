@@ -41,6 +41,18 @@ The `theme` props will be converted to `kebab-case` in global css variables. For
 </style>
 ```
 
+If you want to add opacity to theme color, you should use `color-rgb` instead of `color`.
+
+```js
+<style>
+  p {
+    color: rgba(var(--main-dark), 0.2);
+  }
+</style>
+```
+
+Note that `rgb value` is calculated based on color code, which is assumed to be `7 degit hex code`.
+
 ## Customizing theme
 
 #### 1. Define colors for `light` and `dark` theme.
