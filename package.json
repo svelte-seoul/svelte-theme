@@ -8,11 +8,17 @@
   "svelte": "src/index.ts",
   "scripts": {
     "lint": "eslint src --ext .ts,.js,.svelte",
-    "build": "rollup -c",
+    "build": "rollup -c && cp src/index.ts index.ts",
     "postbuild": "rm -rf lib/__tests__ && rm -rf lib/ts/__tests__",
     "patch-packagejson": "sed -ie 's|src/index.ts|lib/index.js|g' package.json",
     "test": "jest"
   },
+  "files": [
+    "lib/**/*",
+    "package.json",
+    "README.md",
+    "index.ts"
+  ], 
   "keywords": [
     "svelte",
     "theme"
