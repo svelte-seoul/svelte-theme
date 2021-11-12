@@ -1,3 +1,9 @@
+## 1.4.3
+
+- Add rgb variables to support `rgba(var(--main-rgb), 0.2)`.
+
+- Support 3 degit hex code for color.
+
 ## 1.4.0
 
 ### Breaking
