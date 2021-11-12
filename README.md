@@ -51,7 +51,8 @@ If you want to add opacity to theme color, you should use `color-rgb` instead of
 </style>
 ```
 
-Note that `rgb value` is calculated based on color code, which is assumed to be `7 degit hex code`.
+Note that `rgb value` is calculated based on color code, which is assumed to be `6 degit hex code` with `#` prefix. 
+
 
 ## Customizing theme
 
