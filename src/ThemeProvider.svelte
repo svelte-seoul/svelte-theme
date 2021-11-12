@@ -41,11 +41,14 @@
       const varString = `--${kebabize(type)}`;
 
       const hexToRgb = (hex: string) => {
-        const parsed = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        const regex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
 
-        const [r, g, b] = parsed.slice(1).map((s: string) => parseInt(s, 16));
-
-        return `${r},${g},${b}`;
+        const codes = hex
+        .replace(regex, (m, r: string, g: string, b: string) => `#${r}${r}${g}${g}${b}${b}`)
+        .substring(1).match(/.{2}/g)
+        .map((x) => parseInt(x, 16));
+        
+        return codes.join(',');
       };
 
       const rgb = hexToRgb(hex);
