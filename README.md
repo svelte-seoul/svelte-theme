@@ -46,12 +46,12 @@ If you want to add opacity to theme color, you should use `color-rgb` instead of
 ```js
 <style>
   p {
-    color: rgba(var(--main-dark), 0.2);
+    color: rgba(var(--main-dark-rgb), 0.2);
   }
 </style>
 ```
 
-Note that `rgb value` is calculated based on hex string, such as `#000` or `#0DB293`.
+Note that `rgb value` is calculated based on hex value, such as `#000` or `#0DB293`.
 
 ## Customizing theme
 
