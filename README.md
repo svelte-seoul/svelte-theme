@@ -7,10 +7,17 @@
 [![CI](https://github.com/wecount-dev/svelte-theme/actions/workflows/ci.yml/badge.svg)](https://github.com/wecount-dev/svelte-theme/actions/workflows/ci.yml)
 [![publish-package](https://github.com/wecount-dev/svelte-theme/actions/workflows/release.yml/badge.svg)](https://github.com/wecount-dev/svelte-theme/actions/workflows/release.yml)
 
+
 ## Installation
 
 ```sh
 yarn add svelte-theme
+```
+
+> If you want to use this package in [Sveltekit](https://kit.svelte.dev), please install below.
+
+```sh
+yarn add sveltekit-theme
 ```
 
 ## Usage
