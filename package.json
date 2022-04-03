@@ -5,12 +5,13 @@
   "main": "lib/index.js",
   "types": "lib/ts/index.d.ts",
   "module": "lib/index.mjs",
-  "svelte": "src/index.ts",
+  "svelte": "lib/index.js",
   "scripts": {
     "lint": "eslint src --ext .ts,.js,.svelte",
     "build": "rollup -c",
     "postbuild": "rm -rf lib/__tests__ && rm -rf lib/ts/__tests__",
-    "patch-packagejson": "sed -ie 's|src/index.ts|lib/index.js|g' package.json",
+    "patch-packagejson": "sed -ie 's|lib/index.js|lib/index.js|g' package.json",
+    "prepublish": "yarn build && yarn patch-packagejson",
     "test": "jest"
   },
   "keywords": [
