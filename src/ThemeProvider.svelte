@@ -1,6 +1,7 @@
 <script lang="ts">
   import {onMount, setContext} from 'svelte';
   import {writable} from 'svelte/store';
+  import {browser} from '$app/env';
 
   import {
     ThemeType,
@@ -20,7 +21,7 @@
     dark: {...theme.dark, ...customTheme?.dark},
   };
 
-  const darkSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  const darkSchemeQuery = browser ? window.matchMedia('(prefers-color-scheme: dark)') : {matches: false};
 
   if (darkSchemeQuery.matches) initialThemeType = 'dark';
 
@@ -53,8 +54,10 @@
 
       const rgb = hexToRgb(hex);
 
-      document.documentElement.style.setProperty(varString, hex);
-      document.documentElement.style.setProperty(varString + '-rgb', rgb);
+      if (browser) {
+        document.documentElement.style.setProperty(varString, hex);
+        document.documentElement.style.setProperty(varString + '-rgb', rgb);
+      }
     });
   };
 
